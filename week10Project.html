@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 Project</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body class="container">
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group text-center fs-5">
+                        <label for="sneaker-name">Sneaker Name</label>
+                        <input type="text" class="form-control" id="sneaker-name" placeholder="Name of the Shoe">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group text-center fs-5">
+                        <label for="sneaker-price">Sneaker Price Paid (Round To Nearest Dollar)</label>
+                        <input type="number" class="form-control" id="sneaker-price" placeholder="Original Price">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group text-center fs-5">
+                        <label for="purchase date">Date of Purchase</label>
+                        <input type="date" class="form-control" id="purchase-date">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button id="add" class="btn btn-primary mt-3 form-control">Add To My Collection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="list" class="table mt-3 table-dark table-striped">
+        <tr>
+            <th>Sneaker Collection</th>
+            <th>Retail Price (Round To Nearest Dollar)</th>
+            <th>Date Purchased</th>
+            <th>Remove</th>
+        </tr>
+    </table>
+
+
+
+    <script src="week10Project.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</body>
+</html>

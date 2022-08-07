@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+
+    <input type="text" id="todo-textbox" onkeypress="onTyped()">
+    <button onclick="addToDo()">Add ToDo</button>
+    <ul id="todo-list"></ul>
+
+    <script>
+        //finding
+        const textbox = document.getElementById("todo-textbox");
+        // console.log(textbox);
+        const list = document.querySelector("#todo-list");
+        // console.log(list);
+
+        function addToDo () {
+            // don't let them add an empty task
+            if (textbox.value === "") {
+                return;
+            }
+
+            // getting the text from the textbox
+            const todoText = textbox.value
+
+            // making a new list item
+            const li = document.createElement("li");
+
+            // setting the text inside the list item - this will allow textContent that allows you to see text info on webpage
+            li.textContent = todoText
+
+            // remove/hook up deleting
+            li.addEventListener("click", () => {
+                // Delete the list item that we're in the process of creating right now
+                li.remove(); // remove whatever list item you select
+            })
+
+            // moving the list item into the list in the page
+            list.appendChild(li);
+
+            //clear out the textbox
+            textbox.value = "";
+            
+        }
+
+        function onTyped() {
+            if(event.keyCode === 13) {
+                addToDo();
+            }
+        }
+
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+</body>
+</html>
